@@ -1,0 +1,36 @@
+{
+  "name": "playwright-bnb-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation test suite for automationintesting.online website",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "report": "npx playwright show-report",
+    "install:browsers": "npx playwright install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JesseDicksonQA/playwright_bnb.git"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing"
+  ],
+  "author": "Jesse Dickson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesseDicksonQA/playwright_bnb/issues"
+  },
+  "homepage": "https://github.com/JesseDicksonQA/playwright_bnb#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0"
+  }
+}

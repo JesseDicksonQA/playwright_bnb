@@ -1,0 +1,602 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\jesse\\Code_away\\right_for_playwright\\playwright.config.ts",
+    "rootDir": "C:/Users/jesse/Code_away/right_for_playwright/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 9
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/junit-results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/jesse/Code_away/right_for_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 9
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/jesse/Code_away/right_for_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/jesse/Code_away/right_for_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 9
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/jesse/Code_away/right_for_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/jesse/Code_away/right_for_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 9
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/jesse/Code_away/right_for_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 16,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "contactForm.spec.ts",
+      "file": "contactForm.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Contact Form Tests",
+          "file": "contactForm.spec.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should successfully submit contact form with valid data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3598,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=John Doe, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Submission result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Valid Contact Form Submission (CONTACT-01) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: Successfully submitted form with name: John Doe, email: johndoe@example.com\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.338Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-a3f66fecd8c42940987e",
+              "file": "contactForm.spec.ts",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should validate all required fields",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3777,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Validation test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Contact Form Field Validation (CONTACT-02) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.384Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-89a252463cd4915cce9e",
+              "file": "contactForm.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "should allow submission using the end-to-end helper method",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3785,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "End-to-end test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Contact Form End-to-End Helper (CONTACT-03) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: End-to-end submission with name: Jane Smith, details: Form was submitted but no explicit confirmation was displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.386Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-b6d725972d3f6e3c7f3d",
+              "file": "contactForm.spec.ts",
+              "line": 126,
+              "column": 7
+            },
+            {
+              "title": "should successfully submit contact form with valid data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5141,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=John Doe, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Submission result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Valid Contact Form Submission (CONTACT-01) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: Successfully submitted form with name: John Doe, email: johndoe@example.com\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.376Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-708682fd1b1eb79ee4b2",
+              "file": "contactForm.spec.ts",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should validate all required fields",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 4270,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Validation test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Contact Form Field Validation (CONTACT-02) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.369Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-410a851ac88457915fad",
+              "file": "contactForm.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "should allow submission using the end-to-end helper method",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 4202,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "End-to-end test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Contact Form End-to-End Helper (CONTACT-03) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: End-to-end submission with name: Jane Smith, details: Form was submitted but no explicit confirmation was displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.383Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-4295d9dd6051cf27a6ed",
+              "file": "contactForm.spec.ts",
+              "line": 126,
+              "column": 7
+            },
+            {
+              "title": "should successfully submit contact form with valid data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 6,
+                      "status": "passed",
+                      "duration": 4936,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=John Doe, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Submission result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Valid Contact Form Submission (CONTACT-01) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: Successfully submitted form with name: John Doe, email: johndoe@example.com\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.395Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-9e4afcbd413466ffd1a7",
+              "file": "contactForm.spec.ts",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should validate all required fields",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 7,
+                      "status": "passed",
+                      "duration": 4462,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Validation test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Contact Form Field Validation (CONTACT-02) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.398Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-9749c3c1434f9a14dd41",
+              "file": "contactForm.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "should allow submission using the end-to-end helper method",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 8,
+                      "status": "passed",
+                      "duration": 5013,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question\n"
+                        },
+                        {
+                          "text": "Contact form submitted\n"
+                        },
+                        {
+                          "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "End-to-end test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                        },
+                        {
+                          "text": "Test: Contact Form End-to-End Helper (CONTACT-03) - PASSED\n"
+                        },
+                        {
+                          "text": "Details: End-to-end submission with name: Jane Smith, details: Form was submitted but no explicit confirmation was displayed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-05-19T18:35:07.376Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "356cf0d3472bc8940f51-f078d5af084080abc373",
+              "file": "contactForm.spec.ts",
+              "line": 126,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-05-19T18:35:06.508Z",
+    "duration": 8017.892,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

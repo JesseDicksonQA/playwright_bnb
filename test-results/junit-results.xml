@@ -1,0 +1,107 @@
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="0" time="8.017892">
+<testsuite name="contactForm.spec.ts" timestamp="2025-05-19T18:35:06.590Z" hostname="chromium" tests="3" failures="0" skipped="0" time="11.16" errors="0">
+<testcase name="Contact Form Tests › should successfully submit contact form with valid data" classname="contactForm.spec.ts" time="3.598">
+<system-out>
+<![CDATA[Filled contact form with: Name=John Doe, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+Submission result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Valid Contact Form Submission (CONTACT-01) - PASSED
+Details: Successfully submitted form with name: John Doe, email: johndoe@example.com
+]]>
+</system-out>
+</testcase>
+<testcase name="Contact Form Tests › should validate all required fields" classname="contactForm.spec.ts" time="3.777">
+<system-out>
+<![CDATA[Filled contact form with: Name=, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+Validation test result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Contact Form Field Validation (CONTACT-02) - PASSED
+Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed
+]]>
+</system-out>
+</testcase>
+<testcase name="Contact Form Tests › should allow submission using the end-to-end helper method" classname="contactForm.spec.ts" time="3.785">
+<system-out>
+<![CDATA[Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+End-to-end test result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Contact Form End-to-End Helper (CONTACT-03) - PASSED
+Details: End-to-end submission with name: Jane Smith, details: Form was submitted but no explicit confirmation was displayed
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="contactForm.spec.ts" timestamp="2025-05-19T18:35:06.590Z" hostname="firefox" tests="3" failures="0" skipped="0" time="13.613" errors="0">
+<testcase name="Contact Form Tests › should successfully submit contact form with valid data" classname="contactForm.spec.ts" time="5.141">
+<system-out>
+<![CDATA[Filled contact form with: Name=John Doe, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+Submission result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Valid Contact Form Submission (CONTACT-01) - PASSED
+Details: Successfully submitted form with name: John Doe, email: johndoe@example.com
+]]>
+</system-out>
+</testcase>
+<testcase name="Contact Form Tests › should validate all required fields" classname="contactForm.spec.ts" time="4.27">
+<system-out>
+<![CDATA[Filled contact form with: Name=, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+Validation test result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Contact Form Field Validation (CONTACT-02) - PASSED
+Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed
+]]>
+</system-out>
+</testcase>
+<testcase name="Contact Form Tests › should allow submission using the end-to-end helper method" classname="contactForm.spec.ts" time="4.202">
+<system-out>
+<![CDATA[Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+End-to-end test result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Contact Form End-to-End Helper (CONTACT-03) - PASSED
+Details: End-to-end submission with name: Jane Smith, details: Form was submitted but no explicit confirmation was displayed
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="contactForm.spec.ts" timestamp="2025-05-19T18:35:06.590Z" hostname="webkit" tests="3" failures="0" skipped="0" time="14.411" errors="0">
+<testcase name="Contact Form Tests › should successfully submit contact form with valid data" classname="contactForm.spec.ts" time="4.936">
+<system-out>
+<![CDATA[Filled contact form with: Name=John Doe, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+Submission result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Valid Contact Form Submission (CONTACT-01) - PASSED
+Details: Successfully submitted form with name: John Doe, email: johndoe@example.com
+]]>
+</system-out>
+</testcase>
+<testcase name="Contact Form Tests › should validate all required fields" classname="contactForm.spec.ts" time="4.462">
+<system-out>
+<![CDATA[Filled contact form with: Name=, Email=johndoe@example.com, Phone=12345678970, Subject=General Inquiry
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+Validation test result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Contact Form Field Validation (CONTACT-02) - PASSED
+Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed
+]]>
+</system-out>
+</testcase>
+<testcase name="Contact Form Tests › should allow submission using the end-to-end helper method" classname="contactForm.spec.ts" time="5.013">
+<system-out>
+<![CDATA[Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question
+Contact form submitted
+No standard success or error messages found. Checking for any response...
+End-to-end test result: {"isSuccess":true,"hasValidationErrors":false,"details":"Form was submitted but no explicit confirmation was displayed"}
+Test: Contact Form End-to-End Helper (CONTACT-03) - PASSED
+Details: End-to-end submission with name: Jane Smith, details: Form was submitted but no explicit confirmation was displayed
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
