@@ -124,7 +124,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3598,
+                      "duration": 8122,
                       "errors": [],
                       "stdout": [
                         {
@@ -135,6 +135,9 @@
                         },
                         {
                           "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-275Z/CONTACT-01_form-submitted_no-standard-response.png\n"
                         },
                         {
                           "text": "Submission result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
@@ -148,7 +151,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.338Z",
+                      "startTime": "2025-05-19T22:59:24.361Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -177,7 +180,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3777,
+                      "duration": 4882,
                       "errors": [],
                       "stdout": [
                         {
@@ -187,21 +190,24 @@
                           "text": "Contact form submitted\n"
                         },
                         {
-                          "text": "No standard success or error messages found. Checking for any response...\n"
+                          "text": "Form has validation errors: Validation errors: Name may not be blank\n"
                         },
                         {
-                          "text": "Validation test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                          "text": "Screenshot captured: fail/2025-05-19T22-59-25-305Z/CONTACT-02_validation-errors_form-errors-detected.png\n"
                         },
                         {
-                          "text": "Test: Contact Form Field Validation (CONTACT-02) - PASSED\n"
+                          "text": "Validation test result: {\"isSuccess\":false,\"hasValidationErrors\":true,\"details\":\"Validation errors: Name may not be blank\"}\n"
                         },
                         {
-                          "text": "Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed\n"
+                          "text": "Test: Contact Form Field Validation (CONTACT-02) - FAILED\n"
+                        },
+                        {
+                          "text": "Details: Validation test with missing name field: Validation errors: Name may not be blank\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.384Z",
+                      "startTime": "2025-05-19T22:59:24.356Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -230,17 +236,32 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3785,
+                      "duration": 11912,
                       "errors": [],
                       "stdout": [
                         {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-266Z/CONTACT-03_before-fill.png\n"
+                        },
+                        {
                           "text": "Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-266Z/CONTACT-03_after-fill.png\n"
                         },
                         {
                           "text": "Contact form submitted\n"
                         },
                         {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-266Z/CONTACT-03_after-submit.png\n"
+                        },
+                        {
                           "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-266Z/CONTACT-03_form-submitted_no-standard-response.png\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-266Z/CONTACT-03_test-complete_success.png\n"
                         },
                         {
                           "text": "End-to-end test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
@@ -254,7 +275,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.386Z",
+                      "startTime": "2025-05-19T22:59:24.349Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -264,7 +285,7 @@
               ],
               "id": "356cf0d3472bc8940f51-b6d725972d3f6e3c7f3d",
               "file": "contactForm.spec.ts",
-              "line": 126,
+              "line": 127,
               "column": 7
             },
             {
@@ -283,7 +304,7 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 5141,
+                      "duration": 8764,
                       "errors": [],
                       "stdout": [
                         {
@@ -294,6 +315,9 @@
                         },
                         {
                           "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-28-584Z/CONTACT-01_form-submitted_no-standard-response.png\n"
                         },
                         {
                           "text": "Submission result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
@@ -307,7 +331,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.376Z",
+                      "startTime": "2025-05-19T22:59:24.364Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -336,7 +360,7 @@
                       "workerIndex": 4,
                       "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 4270,
+                      "duration": 18717,
                       "errors": [],
                       "stdout": [
                         {
@@ -346,21 +370,24 @@
                           "text": "Contact form submitted\n"
                         },
                         {
-                          "text": "No standard success or error messages found. Checking for any response...\n"
+                          "text": "Form has validation errors: Validation errors: Name may not be blank\n"
                         },
                         {
-                          "text": "Validation test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                          "text": "Screenshot captured: fail/2025-05-19T22-59-27-138Z/CONTACT-02_validation-errors_form-errors-detected.png\n"
                         },
                         {
-                          "text": "Test: Contact Form Field Validation (CONTACT-02) - PASSED\n"
+                          "text": "Validation test result: {\"isSuccess\":false,\"hasValidationErrors\":true,\"details\":\"Validation errors: Name may not be blank\"}\n"
                         },
                         {
-                          "text": "Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed\n"
+                          "text": "Test: Contact Form Field Validation (CONTACT-02) - FAILED\n"
+                        },
+                        {
+                          "text": "Details: Validation test with missing name field: Validation errors: Name may not be blank\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.369Z",
+                      "startTime": "2025-05-19T22:59:24.353Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -389,17 +416,32 @@
                       "workerIndex": 5,
                       "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 4202,
+                      "duration": 16783,
                       "errors": [],
                       "stdout": [
                         {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-28-061Z/CONTACT-03_before-fill.png\n"
+                        },
+                        {
                           "text": "Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-28-061Z/CONTACT-03_after-fill.png\n"
                         },
                         {
                           "text": "Contact form submitted\n"
                         },
                         {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-28-061Z/CONTACT-03_after-submit.png\n"
+                        },
+                        {
                           "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-28-061Z/CONTACT-03_form-submitted_no-standard-response.png\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-28-061Z/CONTACT-03_test-complete_success.png\n"
                         },
                         {
                           "text": "End-to-end test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
@@ -413,7 +455,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.383Z",
+                      "startTime": "2025-05-19T22:59:24.347Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -423,7 +465,7 @@
               ],
               "id": "356cf0d3472bc8940f51-4295d9dd6051cf27a6ed",
               "file": "contactForm.spec.ts",
-              "line": 126,
+              "line": 127,
               "column": 7
             },
             {
@@ -442,7 +484,7 @@
                       "workerIndex": 6,
                       "parallelIndex": 6,
                       "status": "passed",
-                      "duration": 4936,
+                      "duration": 9597,
                       "errors": [],
                       "stdout": [
                         {
@@ -453,6 +495,9 @@
                         },
                         {
                           "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-237Z/CONTACT-01_form-submitted_no-standard-response.png\n"
                         },
                         {
                           "text": "Submission result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
@@ -466,7 +511,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.395Z",
+                      "startTime": "2025-05-19T22:59:24.386Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -495,7 +540,7 @@
                       "workerIndex": 7,
                       "parallelIndex": 7,
                       "status": "passed",
-                      "duration": 4462,
+                      "duration": 6320,
                       "errors": [],
                       "stdout": [
                         {
@@ -505,21 +550,24 @@
                           "text": "Contact form submitted\n"
                         },
                         {
-                          "text": "No standard success or error messages found. Checking for any response...\n"
+                          "text": "Form has validation errors: Validation errors: Name may not be blank\n"
                         },
                         {
-                          "text": "Validation test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
+                          "text": "Screenshot captured: fail/2025-05-19T22-59-25-146Z/CONTACT-02_validation-errors_form-errors-detected.png\n"
                         },
                         {
-                          "text": "Test: Contact Form Field Validation (CONTACT-02) - PASSED\n"
+                          "text": "Validation test result: {\"isSuccess\":false,\"hasValidationErrors\":true,\"details\":\"Validation errors: Name may not be blank\"}\n"
                         },
                         {
-                          "text": "Details: Validation test with missing name field: Form was submitted but no explicit confirmation was displayed\n"
+                          "text": "Test: Contact Form Field Validation (CONTACT-02) - FAILED\n"
+                        },
+                        {
+                          "text": "Details: Validation test with missing name field: Validation errors: Name may not be blank\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.398Z",
+                      "startTime": "2025-05-19T22:59:24.358Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -548,17 +596,32 @@
                       "workerIndex": 8,
                       "parallelIndex": 8,
                       "status": "passed",
-                      "duration": 5013,
+                      "duration": 14942,
                       "errors": [],
                       "stdout": [
                         {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-126Z/CONTACT-03_before-fill.png\n"
+                        },
+                        {
                           "text": "Filled contact form with: Name=Jane Smith, Email=janesmith@example.com, Phone=98765432710, Subject=Booking Question\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-126Z/CONTACT-03_after-fill.png\n"
                         },
                         {
                           "text": "Contact form submitted\n"
                         },
                         {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-126Z/CONTACT-03_after-submit.png\n"
+                        },
+                        {
                           "text": "No standard success or error messages found. Checking for any response...\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-126Z/CONTACT-03_form-submitted_no-standard-response.png\n"
+                        },
+                        {
+                          "text": "Screenshot captured: pass/2025-05-19T22-59-25-126Z/CONTACT-03_test-complete_success.png\n"
                         },
                         {
                           "text": "End-to-end test result: {\"isSuccess\":true,\"hasValidationErrors\":false,\"details\":\"Form was submitted but no explicit confirmation was displayed\"}\n"
@@ -572,7 +635,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-05-19T18:35:07.376Z",
+                      "startTime": "2025-05-19T22:59:24.365Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -582,7 +645,7 @@
               ],
               "id": "356cf0d3472bc8940f51-f078d5af084080abc373",
               "file": "contactForm.spec.ts",
-              "line": 126,
+              "line": 127,
               "column": 7
             }
           ]
@@ -592,8 +655,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-05-19T18:35:06.508Z",
-    "duration": 8017.892,
+    "startTime": "2025-05-19T22:59:23.556Z",
+    "duration": 21236.144,
     "expected": 9,
     "skipped": 0,
     "unexpected": 0,

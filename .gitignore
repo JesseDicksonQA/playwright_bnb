@@ -1,5 +1,19 @@
+# Dependencies
 node_modules/
+
+# Test results and reports
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Screenshots - ignore all PNG files but keep the directory structure
+/screenshots/**/*.png
+
+# OS specific
 .DS_Store
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -33,8 +33,8 @@ test.describe('Contact Form Tests', () => {
       // Submit the form
       await homePage.submitContactForm();
       
-      // Verify form submission result
-      const result = await homePage.verifyFormSubmission();
+      // Verify form submission result with testId for screenshots
+      const result = await homePage.verifyFormSubmission(false, testId);
       
       // Log detailed results for better reporting
       console.log(`Submission result: ${JSON.stringify(result)}`);
@@ -85,7 +85,7 @@ test.describe('Contact Form Tests', () => {
       await homePage.submitContactForm();
       
       // Submit the form with missing name
-      const result = await homePage.verifyFormSubmission(false);
+      const result = await homePage.verifyFormSubmission(false, testId);
       
       // Log detailed results for better reporting
       console.log(`Validation test result: ${JSON.stringify(result)}`);
@@ -94,9 +94,10 @@ test.describe('Contact Form Tests', () => {
       // Rather than expecting validation errors, we'll verify we can submit the form with missing fields
       // This is a good example of adapting tests to the actual behavior of the site
       
-      // This test now verifies that the site accepts form submissions even with missing fields
-      // In a real project, you would discuss with stakeholders if this is the expected behavior
-      expect(result.isSuccess).toBeTruthy();
+      // This test verifies that validation errors appear when submitting with missing required fields
+      // The site correctly shows validation errors for missing name field
+      expect(result.hasValidationErrors).toBeTruthy();
+      expect(result.isSuccess).toBeFalsy();
       
       // Record test result
       testReporter.recordTest(
@@ -138,7 +139,8 @@ test.describe('Contact Form Tests', () => {
         testData.phone,
         testData.subject,
         testData.message,
-        false // We don't expect validation errors for this test
+        false, // We don't expect validation errors for this test
+        testId  // Pass the testId for screenshots
       );
       
       // Log detailed results for better reporting

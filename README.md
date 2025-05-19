@@ -9,7 +9,7 @@ This project is a professional Playwright automation test framework that demonst
 - Detailed test reporting and tracking
 - GitHub Actions CI/CD integration
 - Cross-browser testing
-- Screenshot capturing on test failures
+- Enhanced screenshot functionality for both passed and failed tests
 - Data-driven test approach
 
 ## Project Structure
@@ -75,10 +75,24 @@ This project includes GitHub Actions workflow that automatically runs tests on e
 ## Key Components
 
 ### BasePage.ts
-Provides common functionality for all page objects, such as navigation, element interaction, and waiting for elements.
+Provides common functionality for all page objects, such as navigation, element interaction, waiting for elements, and screenshot capture utilities.
 
 ### HomePage.ts
 Implements the home page functionality, particularly focusing on the contact form at the bottom of the page.
+
+## Screenshot Organization
+The framework captures screenshots at various stages of test execution for both passed and failed tests. Screenshots are organized for easy access and debugging:
+
+- **Top-level organization**: Screenshots are separated into `/pass` and `/fail` directories based on test status
+- **Test run organization**: Within each status directory, screenshots are further organized by timestamp folders (e.g., `2025-05-19T22-41-53-955Z`) to keep all screenshots from a single test run together
+- **Screenshot naming**: Each screenshot is named using a convention of `TestID_Step_AdditionalInfo.png` for clear identification of test context
+
+Examples of screenshot capture points:
+- Before filling out the form
+- After filling out the form
+- After form submission
+- When validation errors occur
+- Final test state
 
 ### TestReporter.ts
 Tracks test executions, pass/fail rates, and provides detailed reporting of test results.

@@ -75,9 +75,10 @@ export class HomePage extends BasePage {
   /**
    * Verify that the contact form was successfully submitted or has validation errors
    * @param expectValidationErrors - Whether we expect validation errors
+   * @param testId - Test identifier for screenshots
    * @returns Promise resolving to an object with success status and validation details
    */
-  async verifyFormSubmission(expectValidationErrors: boolean = false): Promise<{isSuccess: boolean, hasValidationErrors: boolean, details: string}> {
+  async verifyFormSubmission(expectValidationErrors: boolean = false, testId: string = 'UNKNOWN'): Promise<{isSuccess: boolean, hasValidationErrors: boolean, details: string}> {
     try {
       // Create a default result
       const result = {
@@ -85,9 +86,19 @@ export class HomePage extends BasePage {
         hasValidationErrors: false,
         details: ''
       };
+      
+      // Wait for any potential validation errors or success messages
+      await this.page.waitForTimeout(1000);
 
-      // Check for validation errors first (they appear more quickly)
-      const errorVisible = await this.isVisible(this.errorMessage).catch(() => false);
+      // Check for validation errors first (they should appear more quickly)
+      let errorVisible = false;
+      
+      // Try multiple times to check for validation errors as they may take time to appear
+      for (let attempt = 0; attempt < 3; attempt++) {
+        errorVisible = await this.isVisible(this.errorMessage).catch(() => false);
+        if (errorVisible) break;
+        await this.page.waitForTimeout(500); // Short wait between attempts
+      }
       
       if (errorVisible) {
         result.hasValidationErrors = true;
@@ -97,16 +108,23 @@ export class HomePage extends BasePage {
         result.details = `Validation errors: ${errors.join(', ')}`;
         console.log(`Form has validation errors: ${result.details}`);
         
-        // Take screenshot of the validation errors
-        await this.takeScreenshot('validation_errors');
+        // Take screenshot of the validation errors - capture the current state clearly showing the errors
+        await this.takeScreenshot(testId, 'validation-errors', 'fail', 'form-errors-detected');
         
         // If we're expecting validation errors, this is considered a success for the test
         result.isSuccess = expectValidationErrors;
         return result;
       }
 
-      // Check for success message with a short timeout since we've already waited for errors
-      const successVisible = await this.isVisible(this.successMessage).catch(() => false);
+      // Check for success message 
+      let successVisible = false;
+      
+      // Try multiple times to check for success message as it may take time to appear
+      for (let attempt = 0; attempt < 3; attempt++) {
+        successVisible = await this.isVisible(this.successMessage).catch(() => false);
+        if (successVisible) break;
+        await this.page.waitForTimeout(500); // Short wait between attempts
+      }
       
       if (successVisible) {
         // Get the success message text
@@ -114,8 +132,8 @@ export class HomePage extends BasePage {
         result.details = `Success message: ${messageText}`;
         console.log(`Form submission successful: ${result.details}`);
         
-        // Take screenshot of the success
-        await this.takeScreenshot('form_success');
+        // Take screenshot of the success - capture the current state clearly showing the success message
+        await this.takeScreenshot(testId, 'form-success', 'pass', 'success-message-visible');
         
         // This is a success only if we're not expecting validation errors
         result.isSuccess = !expectValidationErrors;
@@ -132,10 +150,17 @@ export class HomePage extends BasePage {
       result.isSuccess = !expectValidationErrors;
       result.details = 'Form was submitted but no explicit confirmation was displayed';
       
+      // Take a screenshot of the current state to show what the page looks like after submission
+      // This helps with debugging when there's no standard success/error message
+      await this.takeScreenshot(testId, 'form-submitted', result.isSuccess ? 'pass' : 'fail', 'no-standard-response');
+      
       return result;
     } catch (error) {
       console.error('Error verifying form submission:', error);
-      await this.takeScreenshot('verification_failure');
+      // Take a clear failure screenshot with the error details
+      // Using String() to safely convert the unknown error to a string
+      const errorStr = error instanceof Error ? error.message : String(error);
+      await this.takeScreenshot(testId, 'verification-error', 'fail', `error-${errorStr.substring(0, 20).replace(/[^a-zA-Z0-9]/g, '-')}`);
       return {
         isSuccess: false,
         hasValidationErrors: false,
@@ -146,11 +171,12 @@ export class HomePage extends BasePage {
 
   /**
    * Legacy method for backward compatibility
+   * @param testId - Test identifier for screenshots
    * @returns Promise resolving to boolean indicating success
    * @deprecated Use verifyFormSubmission instead
    */
-  async verifyFormSubmissionSuccess(): Promise<boolean> {
-    const result = await this.verifyFormSubmission();
+  async verifyFormSubmissionSuccess(testId: string = 'UNKNOWN'): Promise<boolean> {
+    const result = await this.verifyFormSubmission(false, testId);
     return result.isSuccess;
   }
 
@@ -162,6 +188,7 @@ export class HomePage extends BasePage {
    * @param subject - Subject to fill in the form
    * @param message - Message to fill in the form
    * @param expectValidationErrors - Whether we expect validation errors
+   * @param testId - Test identifier for screenshots
    * @returns Promise resolving to verification result object
    */
   async completeContactFormProcess(
@@ -170,11 +197,46 @@ export class HomePage extends BasePage {
     phone: string, 
     subject: string, 
     message: string, 
-    expectValidationErrors: boolean = false
+    expectValidationErrors: boolean = false,
+    testId: string = 'UNKNOWN'
   ): Promise<{isSuccess: boolean, hasValidationErrors: boolean, details: string}> {
-    await this.scrollToContactForm();
-    await this.fillContactForm(name, email, phone, subject, message);
-    await this.submitContactForm();
-    return await this.verifyFormSubmission(expectValidationErrors);
+    try {
+      await this.scrollToContactForm();
+      
+      // Screenshot before filling the form
+      await this.screenshotStep(testId, 'before-fill');
+      
+      await this.fillContactForm(name, email, phone, subject, message);
+      
+      // Screenshot after filling the form
+      await this.screenshotStep(testId, 'after-fill');
+      
+      await this.submitContactForm();
+      
+      // Add a short wait to allow the form to process and UI to update
+      await this.page.waitForTimeout(1000);
+      
+      // Screenshot after submitting the form
+      await this.screenshotStep(testId, 'after-submit');
+      
+      // Allow more time for the page to settle after submission
+      await this.page.waitForTimeout(1500);
+      
+      // Verify and take final screenshots based on result
+      const result = await this.verifyFormSubmission(expectValidationErrors, testId);
+      
+      // Take another screenshot with the final state showing validation or success messages
+      if (result.isSuccess) {
+        await this.screenshotSuccess(testId, 'test-complete');
+      } else {
+        await this.screenshotFailure(testId, 'test-complete');
+      }
+      
+      return result;
+    } catch (error) {
+      // Take screenshot on error
+      await this.screenshotFailure(testId, 'unexpected-error', error);
+      throw error;
+    }
   }
 }
